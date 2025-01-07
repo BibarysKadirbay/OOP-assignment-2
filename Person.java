@@ -1,64 +1,36 @@
-import java.util.Random;
-
-public class Person {
+public abstract class Person implements Payable {
+    private static int ID = 1 ;
     private String name;
+    private int id ;
     private String surname;
-    private int age;
-    private boolean gender;
-    private int PersonID ;
-    private static Random randID = new Random();
-    public Person(){}
-    public Person(String name, String surname, int age, boolean gender) {
+    Person() {
+        this.id = ID++ ;
+    }
+    Person(String name, String surname) {
         this.name = name;
         this.surname = surname;
-        this.age = age;
-        this.gender = gender;
-        this.PersonID = 100000 + randID.nextInt(900000);
+        this.id = ID++;
     }
-
-    public int getPersonID() {
-        return PersonID;
-    }
-    public void setPersonID(int personID) {
-        PersonID = personID;
+    public int getId() {
+        return id;
     }
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getSurname() {
         return surname;
     }
-
+    public void setName(String name) {
+        this.name = name;
+    }
     public void setSurname(String surname) {
         this.surname = surname;
     }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(boolean gender) {
-        this.gender = gender;
-    }
-
+    public abstract String getPosition();
     @Override
     public String toString() {
-        return "Hi, I am " +
-                name + " " + surname +
-                ", a " + age + "-year-old " +
-                (gender ? "Male." : "Female.");
+        return  id + ". " +
+                name + ' ' +
+                surname;
     }
 }

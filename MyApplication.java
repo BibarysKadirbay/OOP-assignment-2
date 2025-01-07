@@ -4,19 +4,16 @@ import java.util.*;
 public class MyApplication {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Person>persons=new ArrayList<>();
-        File fileStudents = new File("src/student.txt");
-        Scanner scanner = new Scanner(fileStudents);
-        while(scanner.hasNextLine()) {
-            String[] info = scanner.nextLine().split(" ");
-            Student student = new Student();
+        persons.add(new Employee("John", "Lennon", "Teacher", 27045.78));
+        persons.add(new Employee("George", "Harrison", "Teacher", 50000.00));
+        persons.add(new Student("Ringo", "Starr", 2));
+        persons.add(new Student("Paul", "McCartney", 2.68));
+        Collections.sort(persons);
+        printData(persons);
+    }
+    public static void printData(ArrayList<Person> persons) {
+        for(Payable person:persons) {
+            System.out.print(person.toString() + " earns " + person.getPaymentAmount() + " tenge\n");
         }
-        scanner.close();
-        File fileTeachers = new File("src/employee.txt");
-        Scanner scan = new Scanner(fileTeachers);
-        while(scan.hasNextLine()) {
-            String[] info = scan.nextLine().split(" ");
-        }
-        scan.close();
-
     }
 }

@@ -1,4 +1,4 @@
-public abstract class Person implements Payable {
+public abstract class Person implements Payable, Comparable<Person> {
     private static int ID = 1 ;
     private String name;
     private int id ;
@@ -32,5 +32,8 @@ public abstract class Person implements Payable {
         return  id + ". " +
                 name + ' ' +
                 surname;
+    }
+    public int compareTo(Person other) {
+        return Double.compare(this.getPaymentAmount(), other.getPaymentAmount());
     }
 }

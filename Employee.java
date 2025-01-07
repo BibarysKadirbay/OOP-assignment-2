@@ -7,11 +7,6 @@ public class Employee extends Person {
         this.salary = salary;
     }
     Employee(){}
-    @Override
-    public String toString() {
-        return "Employee: " + super.toString();
-    }
-
     public void setPosition(String position) {
         this.position = position;
     }
@@ -24,12 +19,18 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
+    public String getPosition() {
+        return this.position;
+    }
+
     @Override
     public double getPaymentAmount() {
         return salary;
     }
 
-    public String getPosition() {
-        return this.position;
+    @Override
+    public String toString() {
+        return "Employee: " + super.toString();
     }
+
 }

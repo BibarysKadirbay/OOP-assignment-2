@@ -7,7 +7,7 @@ public class MyApplication {
         persons.add(new Employee("John", "Lennon", "Fullstack developer", 27045.78));
         persons.add(new Employee("George", "Harrison", "Boxer", 50000.00));
         persons.add(new Student("Ringo", "Starr", 2));
-        persons.add(new Student("Paul", "McCartney", 2.68));
+        persons.add(new Student("Paul", "McCartney", 3.45));
         Collections.sort(persons);
         printData(persons);
     }

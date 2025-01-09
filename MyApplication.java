@@ -4,8 +4,8 @@ import java.util.*;
 public class MyApplication {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Person>persons=new ArrayList<>();
-        persons.add(new Employee("John", "Lennon", "Teacher", 27045.78));
-        persons.add(new Employee("George", "Harrison", "Teacher", 50000.00));
+        persons.add(new Employee("John", "Lennon", "Fullstack developer", 27045.78));
+        persons.add(new Employee("George", "Harrison", "Boxer", 50000.00));
         persons.add(new Student("Ringo", "Starr", 2));
         persons.add(new Student("Paul", "McCartney", 2.68));
         Collections.sort(persons);
